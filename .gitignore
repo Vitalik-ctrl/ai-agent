@@ -1,0 +1,26 @@
+# Virtual environment
+venv/
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Logs and temporary files
+*.log
+*.tmp
+*.txt
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Git specific
+*.patch
+*.diff
+*.sublime-workspace
