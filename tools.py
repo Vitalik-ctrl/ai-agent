@@ -26,7 +26,7 @@ def search(query: str) -> str:
     
 @tool
 def create_terminal_command(command: str) -> str:
-    """Create a terminal command and return it."""
+    """Create a terminal command and return it. If Model understands it need to execute command, it also can use the tool."""
     return f"[COMMAND_PENDING]:{command}"
 
 def init_rag_tool(retriever):

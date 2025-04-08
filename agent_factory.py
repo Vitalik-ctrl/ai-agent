@@ -26,18 +26,21 @@ def build_agent(retriever):
         ("placeholder", "{agent_scratchpad}") 
     ])
 
+    rag_tool = init_rag_tool(retriever)
+    tools = [time_tool, search_tool, terminal_tool, rag_tool]
+
     agent = create_tool_calling_agent(
-        llm=llm, 
-        tools=[time_tool, search_tool, terminal_tool, init_rag_tool(retriever)], 
+        llm=llm,
+        tools=tools,
         prompt=prompt
     )
 
-    return RunnableWithMessageHistory (
+    return RunnableWithMessageHistory(
         runnable=AgentExecutor(
-            agent=agent, 
-            tools=[time_tool, search_tool, terminal_tool, init_rag_tool(retriever)], 
-            return_intermediate_steps=True, 
-            verbose=True
+            agent=agent,
+            tools=tools,
+            return_intermediate_steps=True,
+            verbose=False # Set verbose on True to allow debug info printed
         ),
         get_session_history=get_memory,
         input_messages_key="input",            
