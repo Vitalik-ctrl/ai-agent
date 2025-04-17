@@ -1,6 +1,6 @@
 # ai-agent
 
-AI Agent powered by **LangChain**, using **Gemini (Google Generative AI) LLM**, and smart tools.  
+CLI AI Agent powered by **LangChain**, using **Gemini (Google Generative AI) LLM**, and smart tools.  
 
 Features include:
 
@@ -18,7 +18,7 @@ Features include:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ai-agent.git
+git clone https://github.com/Vitalik-ctrl/ai-agent.git
 cd ai-agent
 ```
 
