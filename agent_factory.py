@@ -9,6 +9,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from tools import get_current_time as time_tool, search as search_tool, create_terminal_command as terminal_tool
 from tools import init_rag_tool
 from memory import get_memory
+import platform
 
 load_dotenv()
 
@@ -20,7 +21,18 @@ def build_agent(retriever):
     )
 
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant. If the user asks about their info or anything you possibly cannot know, use the RAG tool to answer. If there is no relevant information, say 'I don't know'"),
+        ("system", f"""You are a helpful assistant. 
+
+        You are running on a {platform.system().upper()} system.
+
+        When generating terminal commands:
+        - On **Windows**, use PowerShell syntax. Example: `New-Item file.txt -ItemType File`, `Get-ChildItem`.
+        - On **Linux/macOS**, use Bash syntax. Example: `touch file.txt`, `ls`.
+
+        If the user asks for a command, generate the appropriate one and wrap it in the `create_terminal_command` tool.
+
+        If the user asks about their info or anything you possibly cannot know, use the RAG tool to answer. If there is no relevant information, say 'I don't know'.
+        """),
         MessagesPlaceholder(variable_name="chat_history"),
         ("human", "{input}"),
         ("placeholder", "{agent_scratchpad}") 

@@ -65,7 +65,33 @@ pipreqs . --force
 pip install -r requirements.txt
 ```
 
-- #### e. (Optional)
+---
+
+### 3. Add your API key
+
+Create a `.env` file in the project root:
+
+```
+GEMINI_KEY=your_google_api_key_here
+```
+
+---
+
+### 4. Run 
+
+- #### a. Navigate to your project folder
+
+```bash
+cd path/to/your/project
+```
+
+- #### b. Run
+
+```bash
+python app.py
+```
+
+- #### c. (Optional)
   You may get an error: ImportError: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
   
 Run on Windows:
@@ -75,16 +101,6 @@ pip install faiss-cpu
    Or run on Linux && If you have a CUDA-compatible NVIDIA GPU:
 ```bash
 pip install faiss-gpu
-```
-
----
-
-### 3. Add your API key
-
-Create a `.env` file in the project root:
-
-```
-GEMINI_KEY=your_google_api_key_here
 ```
 
 ---
