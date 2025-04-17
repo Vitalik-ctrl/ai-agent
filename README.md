@@ -65,6 +65,18 @@ pipreqs . --force
 pip install -r requirements.txt
 ```
 
+- #### e. (Optional)
+  You may get an error: ImportError: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+  
+Run on Windows:
+```bash
+pip install faiss-cpu
+```
+   Or run on Linux && If you have a CUDA-compatible NVIDIA GPU:
+```bash
+pip install faiss-gpu
+```
+
 ---
 
 ### 3. Add your API key
@@ -164,18 +176,14 @@ You must visit Google Gemini API usage rules: https://ai.google.dev/terms
 ## 🧾 Requirements
 
 ```txt
-duckduckgo_search==7.5.5
+duckduckgo_search==8.0.0
 langchain==0.3.23
 langchain_community==0.3.21
-langchain_core==0.3.51
-langchain_google_genai==2.1.2
-matplotlib==3.10.1
+langchain_core==0.3.52
+langchain_google_genai==2.1.3
 numpy==2.2.4
-protobuf==6.30.2
 python-dotenv==1.1.0
-scikit_learn==1.6.1
-sentence_transformers==4.0.1
-umap_learn==0.5.7
+sentence_transformers==4.1.0
 ```
 
 ---
