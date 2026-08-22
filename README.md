@@ -12,7 +12,7 @@ Features include:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 
 ### 1. Clone the repository
@@ -118,7 +118,7 @@ pip install faiss-gpu
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ```bash
 .
@@ -147,7 +147,7 @@ pip install faiss-gpu
 
 ---
 
-## 🧪 Example
+## Example
 
 ```bash
 $ python app.py
@@ -163,7 +163,7 @@ Command execution cancelled.
 
 ---
 
-## 📁 Add Custom Documents
+## Add Custom Documents
 
 You can place your `.txt` files in the project and update:
 
@@ -175,21 +175,21 @@ to include your own docs. They will then be searchable using the RAG tool.
 
 ---
 
-## 💾 Memory
+## Memory
 
 - Stored in memory during runtime using `ChatMessageHistory`
 - Saved to `chat_history.txt` when you exit
 
 ---
 
-## 📜 License
+## License
 
 MIT License.  
 You must visit Google Gemini API usage rules: https://ai.google.dev/terms
 
 ---
 
-## 🧾 Requirements
+## Requirements
 
 ```txt
 duckduckgo_search==8.0.0
